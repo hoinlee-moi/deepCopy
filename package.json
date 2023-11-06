@@ -1,5 +1,5 @@
 {
-  "name": "@moi_lee/deepcopy",
+  "name": "@mo_lee/deepcopy",
   "version": "0.0.5",
   "description": "value deepcopy",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "keywords": [
     "deepcopy"
   ],
-  "author": "moi_lee",
+  "author": "mo_lee",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hoinlee-moi/deepCopy/issues"
