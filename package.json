@@ -1,0 +1,23 @@
+{
+  "name": "@moi_lee/deepcopy",
+  "version": "0.0.5",
+  "description": "value deepcopy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoinlee-moi/deepCopy.git"
+  },
+  "keywords": [
+    "deepcopy"
+  ],
+  "author": "moi_lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoinlee-moi/deepCopy/issues"
+  },
+  "homepage": "https://github.com/hoinlee-moi/deepCopy#readme"
+}
