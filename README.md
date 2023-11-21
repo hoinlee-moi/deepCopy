@@ -1,17 +1,77 @@
-# deepCopy
+> # utils
 
-객체를 깊은 복사하는 데 도움이 되는 라이브러리 입니다.
+Vanilla Javascript 로 작성된 각종 Utility 함수들입니다
 
-## Install
+> ## Install
 
-`npm i @mo_lee/deepcopy`
+**npm 레지스트리**를 통해 사용할 수 있는 **Node.js** 모듈입니다
+설치하기 전 **Node.js를 다운로드하여 설치해주세요**
+
+`npm install` 설치는 다음 명령을 사용하여 수행됩니다
+
+```
+npm i @mo_lee/utils
+```
 
 참고 : ESM 방식으로 작성되었으며 CMS에서 정상적으로 동작하지 않을 수 있습니다
 
-## Usage
+> ## Function
+
+- debounce
+- throttle
+- deepCopy
+- promiseLike
+- rand
+- range
+
+<br>
+
+> ## Usage
+>
+> <br>
+
+### debounce
 
 ```javascript
-import { deepCopy } from "@mo_lee/deepcopy";
+import { debounce } from "@mo_lee/utils";
+
+const printNumber = debounce(console.log, 1000);
+
+let count = 0;
+
+const printInter = setInterval(() => {
+  if ((count += 1) > 20) return clearInterval(printInter);
+  printNumber(1);
+}, 100);
+
+// Executes once after 3 seconds
+```
+
+<br>
+
+### throttle
+
+```javascript
+import { throttle } from "@mo_lee/utils";
+
+const printNumber = throttle(console.log, 1000);
+
+let count = 0;
+
+const printInter = setInterval(() => {
+  if ((count += 1) > 20) return clearInterval(printInter);
+  printNumber(1);
+}, 100);
+
+// Run twice for 2 seconds
+```
+
+<br>
+
+### deepCopy
+
+```javascript
+import { deepCopy } from "@mo_lee/utils";
 
 class Dog {
   name;
@@ -36,61 +96,55 @@ const user = {
 const copiedUser = deepCopy(user); // user !==  copiedUser
 ```
 
-<br><br>
+<br>
 
-## Example
+### promiseLike
 
 ```javascript
-import assert from "assert";
-import { deepCopy } from "@mo_lee/deepcopy";
+import { promiseLike } from "@mo_lee/utils";
 
-class Dog {
-  name;
-  constructor(name) {
-    this.name = name;
-  }
-}
-const lucy = new Dog("lusy");
-const arr = [1, 2, "lee"];
-const hong = { id: 1, name: "hong" };
-const object = {
-  nid: 3,
-  addr: { city: "pusan", village: { name: "homeTown" }, arr: [1, 2, 3, 4] },
-  arr: [1, 2, 3, { aid: 1 }, [10, 20]],
-  oo: { id: 1, name: "Hong", addr: { city: "Seoul" } },
-  xx: null,
-  yy: (a) => {
-    return a;
-    this.addr;
-  },
-  yyy(x, y) {
-    return this.oo;
-  },
-  [Symbol()]: 9,
-  [Symbol()]: Symbol("symbol2"),
-  dog: lucy,
-  sobj: new String("abc"),
-  nobj: new Number(123),
-  bobj: new Boolean(true),
-  [Symbol()]: Object(Symbol("symbol3")),
+const myPromise = new promiseLike((resolve, reject) => {
+  setTimeout(() => {
+    const now = Date.now();
+    if (now % 2 >= 0) resolve(now);
+    else reject(new Error("error"));
+  }, 1000);
+});
 
-  zs: new Set([arr, hong]),
-  zws: new WeakSet([arr, hong]),
-  zm: new Map([[hong, arr]]),
-  zwm: new WeakMap([[hong, arr]]),
-};
-
-const copiedObject = deepCopy(object);
-
-user.name = "lee";
-copiedObject.addr.city = "seoul";
-copiedObject.addr.village.name = "chon";
-copiedObject.addr.arr[2] = 100;
-assert.notDeepStrictEqual(copiedObject.name, user.name);
-
-user.zs.add("john");
-assert.notDeepStrictEqual(copiedObject.zs, user.zs);
-
-copiedObject.zm.set("d", 4);
-assert.notDeepStrictEqual(newObj.zm, user.zm);
+myPromise.then((res) => console.log(res)); // promise OK
 ```
+
+<br>
+
+### rand
+
+```javascript
+import { rand } from "@mo_lee/utils";
+
+console.log(rand(1, 10)); //Random number between 1 and 10
+console.log(rand(5, 20)); //Random number between 5 and 20
+```
+
+<br>
+
+### range
+
+```javascript
+import { range } from "@mo_lee/utils";
+
+range(0); // [0]
+range(1, 10, 1); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+range(1, 10); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+range(10, 1, -2); // [10, 8, 6, 4, 2]
+range(-5); // [-5, -4, -3, -2, -1]
+```
+
+> ## People
+
+mo_lee
+
+<br>
+
+> ## License
+
+**MIT**

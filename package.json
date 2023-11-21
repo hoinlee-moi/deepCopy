@@ -1,7 +1,7 @@
 {
-  "name": "@mo_lee/deepcopy",
-  "version": "0.0.5",
-  "description": "value deepcopy",
+  "name": "@mo_lee/utils",
+  "version": "0.0.3",
+  "description": "deepCopy range once rand promiseLike debounce throttle",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,15 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoinlee-moi/deepCopy.git"
+    "url": "git+https://github.com/hoinlee-moi/utils.git"
   },
   "keywords": [
-    "deepcopy"
+    "utils",
+    "deepcopy",
+    "range",
+    "once",
+    "rand",
+    "debounce",
+    "throttle"
   ],
   "author": "mo_lee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hoinlee-moi/deepCopy/issues"
+    "url": "https://github.com/hoinlee-moi/utils/issues"
   },
-  "homepage": "https://github.com/hoinlee-moi/deepCopy#readme"
+  "homepage": "https://github.com/hoinlee-moi/utils#readme"
 }
