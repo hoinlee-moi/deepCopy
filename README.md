@@ -1,19 +1,19 @@
 > # utils
 
-Vanilla Javascript 로 작성된 각종 Utility 함수들입니다
+This module provides various utility functions written in Vanilla JavaScript.
 
 > ## Install
 
-**npm 레지스트리**를 통해 사용할 수 있는 **Node.js** 모듈입니다
-설치하기 전 **Node.js를 다운로드하여 설치해주세요**
+This is a **Node.js** module available through the **npm registry**.<br>
+Please download and install **Node.js** before proceeding with the installation.
 
-`npm install` 설치는 다음 명령을 사용하여 수행됩니다
+The installation using `npm install` is performed using the following command.
 
 ```
 npm i @mo_lee/utils
 ```
 
-참고 : ESM 방식으로 작성되었으며 CMS에서 정상적으로 동작하지 않을 수 있습니다
+Note: It is written in ESM format and may not function correctly in some Content Management Systems (CMS).
 
 > ## Function
 
