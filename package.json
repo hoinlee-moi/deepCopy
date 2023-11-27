@@ -1,6 +1,6 @@
 {
   "name": "@mo_lee/utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "deepCopy range once rand promiseLike debounce throttle",
   "main": "index.js",
   "type": "module",
