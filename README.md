@@ -24,6 +24,10 @@ Note: It is written in ESM format and may not function correctly in some Content
 - rand
 - range
 
+version 0.0.5
+
+- makeGenerator
+
 <br>
 
 > ## Usage
@@ -137,6 +141,27 @@ range(1, 10, 1); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 range(1, 10); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 range(10, 1, -2); // [10, 8, 6, 4, 2]
 range(-5); // [-5, -4, -3, -2, -1]
+```
+
+<br>
+
+### makeGenerator
+
+```javascript
+import { makeGenerator } from "@mo_lee/utils";
+
+const user = { id: 1, name: "John", job: "Doctor" };
+
+for (const value of user) console.log(value); // Error: user is not iterable
+
+makeGenerator(user);
+
+for (const value of user) console.log(value); // OK!
+/*
+1
+John
+Doctor
+*/
 ```
 
 > ## People
