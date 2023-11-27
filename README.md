@@ -17,6 +17,11 @@ Note: It is written in ESM format and may not function correctly in some Content
 
 > ## Function
 
+version 0.0.5
+
+- makeGenerator
+
+version 0.0.4
 - debounce
 - throttle
 - deepCopy
@@ -24,9 +29,7 @@ Note: It is written in ESM format and may not function correctly in some Content
 - rand
 - range
 
-version 0.0.5
 
-- makeGenerator
 
 <br>
 
